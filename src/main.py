@@ -1,16 +1,33 @@
-from constants import MAX_LEGAL_WORK_DAYS
+import csv
 
-while True:
-    print("Enter the number of worked days: ", end="")
-    num_days_worked: int = input()
-    try:
-        num_days_worked = int(num_days_worked)
-    except:
-        print("Please use numeric digits")
-        continue
-    if num_days_worked < 0:
-        print("Please enter a positive number")
-        continue
-    if num_days_worked > MAX_LEGAL_WORK_DAYS:
-        print(f"The maximum number of legal working days in Romania is {MAX_LEGAL_WORK_DAYS}.")
-    break 
+from constants import BASE_SALARY, PAID_HOURS_PER_SHIFT, WEEKEND_DAYS
+from get_work_days import get_user_working_days
+
+
+with open("Schedule - 2025.csv", mode="r") as file:
+    reader = csv.reader(file)
+
+    days = next(reader)
+    shifts = next(reader)
+
+
+work_days = len(days) - 1 - WEEKEND_DAYS
+user_working_days = get_user_working_days(shifts)
+
+print(user_working_days)
+
+total_salary = 0
+for day in days[1:]:
+    work_day = get_day_object(day)
+    total_salary += work_day.get_money()
+
+daily_rate = BASE_SALARY // work_days
+hourly_rate = daily_rate / PAID_HOURS_PER_SHIFT
+
+def get_hours(day, shift):
+    pass
+
+
+
+
+
