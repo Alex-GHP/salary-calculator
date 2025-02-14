@@ -1,6 +1,6 @@
 import csv
 
-from constants import BASE_SALARY, PAID_HOURS_PER_SHIFT, WEEKEND_DAYS, MEAL_TICKETS
+from constants import BASE_SALARY, PAID_HOURS_PER_SHIFT, WEEKEND_DAYS, MEAL_TICKET
 from utils import get_user_working_days, get_day_object
 from days import *
 
@@ -27,7 +27,7 @@ for i in range(1, len(days)):
         total_salary += work_day.get_money() * 2
     total_salary += work_day.get_money()
 
-total_salary += MEAL_TICKETS + int(shifts[0])
+total_salary += (MEAL_TICKET * user_working_days) + int(shifts[0])
 
 print(f"Total salary for {days[0]} is {total_salary:.2f} RON")
 
