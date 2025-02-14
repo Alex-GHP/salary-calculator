@@ -1,5 +1,3 @@
-from constants import MIN_LEGAL_WORK_DAYS, MAX_LEGAL_WORK_DAYS, WEEKEND_DAYS
-import csv
 from days import *
 
 def get_user_working_days(shifts):
@@ -12,7 +10,6 @@ def get_user_working_days(shifts):
 
 def get_day_object(day, shift, hourly_rate):
     weekdays = ["monday", "mondayph", "tuesday", "tuesdayph", "wednesday", "wednesdayph", "thursday", "thursdayph"]
-    weekend_days = ["friday", "fridayph", "saturday", "saturdayph", "sunday", "sundayph"]
 
     if day in weekdays:
         return Weekday(day, shift, hourly_rate)

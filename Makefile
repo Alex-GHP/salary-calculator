@@ -2,5 +2,5 @@ PYTHON = python3
 SRC_DIR = src
 MAIN_SCRIPT = main.py
 
-run:
+calculate_salary:
 	@$(PYTHON) $(SRC_DIR)/$(MAIN_SCRIPT)

@@ -6,4 +6,4 @@ This script is meant to automate a boring task I do once every month, and do it 
 
 * Calculate based on the night shift hours and weekend hours bonuses.
 
-* Keep track by storing the data into a Google Sheets.
+* Include public holidays bonus.

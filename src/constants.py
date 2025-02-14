@@ -8,6 +8,9 @@ MAX_LEGAL_WORK_DAYS = 23
 MIN_LEGAL_WORK_DAYS = 20
 PAID_HOURS_PER_SHIFT = 9
 
+PERFORMANCE_BONUS = 600
+MEAL_TICKETS = 320
+
 months = {
     "january": 1,
     "february": 2,
